@@ -20,7 +20,7 @@ namespace GADETask1
         protected string symbol;
         protected bool IsAttack;
 
-        public abstract void Move(int dir);
+        public abstract void Move(int dir); 
         public abstract void Combat(Unit attacker);
         public abstract bool RangeCheck(Unit other);
         public abstract (Unit,int) EnemyDistance(List<Unit> units);

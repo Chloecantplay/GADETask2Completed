@@ -38,7 +38,7 @@ namespace GADETask1
             round = 1; 
         }
 
-        public void Update()
+        public void Update() //This method updates per round and allows the units to move and attack
         {
             foreach (Building b in map.Buildings)
             {
@@ -124,12 +124,12 @@ namespace GADETask1
                 else if (map.Units[i] is RangedUnit)
                 {
                     RangedUnit ru = (RangedUnit)map.Units[i];
-                    //if (ru.health <= ru.maxHealth * 0.25) // Running Away is commented out to make for a more interesting battle - and some insta-deaths
-                    //{
-                    //    ru.Move(r.Next(0, 4));
-                    //}
-                    //else
-                    //{
+                    if (ru.health <= ru.maxHealth * 0.25) // allows the unit to run away
+                    {
+                        ru.Move(r.Next(0, 4));
+                    }
+                    else
+                    {
                         (Unit closest, int distanceTo) = ru.EnemyDistance(map.Units);
                       
                         //Check In Range
@@ -182,7 +182,7 @@ namespace GADETask1
                             }
                         }
 
-                   // }
+                    }
 
                 }
             }

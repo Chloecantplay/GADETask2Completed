@@ -81,9 +81,9 @@ namespace GADETask1
 
         int speedCheck = 1;
 
-        public override void Combat(Unit attacker)
+        public override void Combat(Unit attacker)// Updated combat for the melee and ranged units
         {
-            //HealthCheck();
+            
             if (attacker is MeleeUnit)
             {
                 base.health = base.health - ((MeleeUnit)attacker).attack;
@@ -96,17 +96,17 @@ namespace GADETask1
 
             if(base.health <= 0)
             {
-                Death(); //it does the big deaded
+                Death(); //calls the death method
             }
         }
 
-        public override void Death()
+        public override void Death()//Changes the is dead value to true
         {
             symbol="X";
             IsDead=true;
         }
 
-        public override (Unit,int) EnemyDistance(List<Unit> units)
+        public override (Unit,int) EnemyDistance(List<Unit> units)// Determines the distance to the enemy
         {
            int shortest = 100;
             Unit closest = this;
@@ -140,7 +140,7 @@ namespace GADETask1
             return (closest,shortest);
         }
 
-        public override void Move(int dir)
+        public override void Move(int dir)//Allows the units to move
         {
             switch(dir)
             {
@@ -152,7 +152,7 @@ namespace GADETask1
             }                      
         }
 
-        public override bool RangeCheck(Unit other)
+        public override bool RangeCheck(Unit other)//Checks if the enemy is in range of attack
         {
             int distance = 0;
             int oX = 0;
@@ -179,7 +179,7 @@ namespace GADETask1
             }
         }
 
-        public override string Info()
+        public override string Info()// shows the info of the unit
         {
             string temp = "";
             temp += "Archer: ";
@@ -190,7 +190,7 @@ namespace GADETask1
             return temp;
         }
 
-        public int Distance(Unit u)
+        public int Distance(Unit u)// determines the distance to the nearset enemy
         {
             int Distance;
             int ySqr;

@@ -37,7 +37,7 @@ namespace GADETask1
            
         }
 
-        public void Generate()
+        public void Generate()// This method generates the buildings so that they can generate the units
         {
             for(int i = 0; i < NumBuildings; i++)
             {
@@ -45,12 +45,12 @@ namespace GADETask1
                 {
                     if (random.Next(0, 2) == 0)
                     {
-                        ResourceBuilding r = new ResourceBuilding(random.Next(0, 20), random.Next(0, 20), 20, 0, "{}",random.Next(400,500));
+                        ResourceBuilding r = new ResourceBuilding(random.Next(0, 20), random.Next(0, 20), 20, 0, "{}",random.Next(400,500));//Generates a random amount of resources for the building
                         Buildings.Add(r);
                     }
                     else
                     {
-                        FactoryBuilding f = new FactoryBuilding(random.Next(0, 20), random.Next(0, 20), 15, 0, "[]", random.Next(0, 2), 4);
+                        FactoryBuilding f = new FactoryBuilding(random.Next(0, 20), random.Next(0, 20), 15, 0, "[]", random.Next(0, 2), 4);//Randomly selects which unit the building produces
                         Buildings.Add(f);
                     }
                 }

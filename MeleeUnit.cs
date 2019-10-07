@@ -81,9 +81,9 @@ namespace GADETask1
 
         int speedCheck = 1;
 
-        public override void Combat(Unit attacker)
+        public override void Combat(Unit attacker) //This method allows the unit to take damage
         {
-            //HealthCheck();
+            
             if (attacker is MeleeUnit)
             {
                 base.health = base.health - ((MeleeUnit)attacker).Attack;
@@ -100,13 +100,13 @@ namespace GADETask1
             }
         }
 
-        public override void Death()
+        public override void Death()// replaces the symbol and sets the isdead bool to true
         {
             symbol="X";
             IsDead=true;
         }
 
-        public override (Unit,int) EnemyDistance(List<Unit> units)
+        public override (Unit,int) EnemyDistance(List<Unit> units)// Determines the distance to the enemy
         {
            int shortest = 100;
             Unit closest = this;
@@ -152,7 +152,7 @@ namespace GADETask1
             }                      
         }
 
-        public override bool RangeCheck(Unit other)
+        public override bool RangeCheck(Unit other)//Checks if the enemy is in range of attack
         {
             int distance = 0;
             int oX = 0;
@@ -179,7 +179,7 @@ namespace GADETask1
             }
         }
 
-        public override string Info()
+        public override string Info()// Displays the information on the building
         {
            string temp = "";
             temp += "Warrior: ";
@@ -190,7 +190,7 @@ namespace GADETask1
             return temp;
         }
 
-        public int Distance(Unit u)
+        public int Distance(Unit u)// determines the distance to the nearset enemy
         {
             int Distance;
             int ySqr;

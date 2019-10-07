@@ -77,7 +77,7 @@ namespace GADETask1
             Production_Speed = speed;
             Unit_type = unittype;
         }
-        public override void Destroyed()
+        public override void Destroyed()//This method allows for buildings to be destroyed
         {
             symbol = "X";
             IsDead = true;
@@ -87,7 +87,7 @@ namespace GADETask1
         {
             string temp = "";
             temp += "Factory Building";
-            if (Unit_type == 0)
+            if (Unit_type == 0) //this will show which unit the building produces
             {
                 temp += "Producing Melee Units";
             }
@@ -100,7 +100,7 @@ namespace GADETask1
             temp += (IsDead ? " This building is destroyed" : " This building is fully operational");
             return temp;
         }
-        public Unit SpawnUnit()
+        public Unit SpawnUnit()// this method allows the building to produce melee and ranged units on either team
         {
             if (Team == 0)
             {

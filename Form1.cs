@@ -59,7 +59,7 @@ namespace GADETask1
             engine.Update();
             Display();
         }
-        public void Display()
+        public void Display() // the display method was moved to the form so that the save method can work
         {
             Form1 form = new Form1();
             MapBox.Controls.Clear();
@@ -141,7 +141,7 @@ namespace GADETask1
             }
         }
 
-        public void Unit_Click(object sender, EventArgs e)
+        public void Unit_Click(object sender, EventArgs e)// allows for the units to be clicked on so their info can be displayed
         {
             int x, y;
             Button b = (Button)sender;
@@ -171,7 +171,7 @@ namespace GADETask1
 
 
         }
-        public void Building_Click(object sender, EventArgs e)
+        public void Building_Click(object sender, EventArgs e)// This method allows for the buildings to be clicked on and for the info to be displayed, however the resource building takes a varied amount of turns to display
         {
             int x, y;
             Button b = (Button)sender;

@@ -61,13 +61,13 @@ namespace GADETask1
             Resources_Remaining = resources;
         }
 
-        public override void Destroyed()
+        public override void Destroyed() //shows if the building is destroyed
         {
             symbol = "X";
             IsDead = true;
         }
 
-        public override string Info()
+        public override string Info()// Displays the information on the building
         {
             string temp = "";
             temp += "Resource building";
@@ -79,7 +79,7 @@ namespace GADETask1
             return temp;
         }
 
-        public int GenerateResources()
+        public int GenerateResources()//This method generates the resources
         {
             int Temp = resources_Generated;
             if (!IsDead)
